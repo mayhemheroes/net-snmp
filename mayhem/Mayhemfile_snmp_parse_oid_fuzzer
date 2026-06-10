@@ -1,0 +1,8 @@
+project: net-snmp
+target: snmp_parse_oid_fuzzer
+testsuite:
+  - file:///mayhem/mayhem/testsuite/snmp_parse_oid
+cmds:
+  - cmd: /mayhem/snmp_parse_oid_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/snmp_oid.dict

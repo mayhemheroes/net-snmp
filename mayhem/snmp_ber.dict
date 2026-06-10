@@ -1,0 +1,50 @@
+# ASN.1/BER tokens for SNMP PDU parsing (snmp_pdu_parse / snmp_parse /
+# snmpv3_scopedPDU_parse). Bytes are the BER identifier octets the parser
+# branches on; multi-byte entries are minimal valid TLV fragments.
+
+# universal ASN.1 tags: INTEGER, OCTET STRING, NULL, OID, SEQUENCE, SET
+"\x02"
+"\x04"
+"\x05\x00"
+"\x06"
+"\x30"
+"\x31"
+
+# SNMP application tags: IpAddress, Counter32, Gauge32, TimeTicks, Opaque, Counter64
+"\x40"
+"\x41"
+"\x42"
+"\x43"
+"\x44"
+"\x46"
+
+# SNMP PDU context tags: Get, GetNext, Response, Set, Trap(v1), GetBulk, Inform, Trap(v2), Report
+"\xa0"
+"\xa1"
+"\xa2"
+"\xa3"
+"\xa4"
+"\xa5"
+"\xa6"
+"\xa7"
+"\xa8"
+
+# exception values: noSuchObject, noSuchInstance, endOfMibView
+"\x80\x00"
+"\x81\x00"
+"\x82\x00"
+
+# version fragments: version-1, version-2c, version-3
+"\x02\x01\x00"
+"\x02\x01\x01"
+"\x02\x01\x03"
+
+# community strings
+"\x04\x06public"
+"\x04\x07private"
+
+# OID prefixes: 1.3 ; sysDescr.0 ; mgmt 1.3.6.1.2.1 ; enterprises 1.3.6.1.4.1
+"\x06\x01\x2b"
+"\x06\x08\x2b\x06\x01\x02\x01\x01\x01\x00"
+"\x2b\x06\x01\x02\x01"
+"\x2b\x06\x01\x04\x01"

@@ -1,0 +1,32 @@
+# AgentX (RFC 2741) PDU tokens for agentx_parse. The 20-byte header is
+# version(1) type(1) flags(1) reserved(1) sessionID(4) transactionID(4)
+# packetID(4) payload_length(4). These fragments key the header fields the
+# parser dispatches on.
+
+# version: AGENTX_VERSION_1
+"\x01"
+
+# PDU types (header byte 2): Open, Close, Register, Unregister, Get, GetNext,
+# GetBulk, TestSet, CommitSet, Notify, IndexAllocate, AddAgentCaps, Response
+"\x02"
+"\x03"
+"\x04"
+"\x05"
+"\x06"
+"\x07"
+"\x08"
+"\x0a"
+"\x0c"
+"\x10"
+"\x12"
+"\x13"
+
+# flags (header byte 3): NETWORK_BYTE_ORDER, NON_DEFAULT_CONTEXT, ANY_INDEX,
+# NEW_INDEX, INSTANCE_REGISTRATION
+"\x10"
+"\x08"
+"\x04"
+"\x02"
+
+# a minimal Open-PDU header (network byte order, zero payload)
+"\x01\x01\x10\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"

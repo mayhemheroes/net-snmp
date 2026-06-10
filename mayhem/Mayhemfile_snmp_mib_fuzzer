@@ -1,0 +1,8 @@
+project: net-snmp
+target: snmp_mib_fuzzer
+testsuite:
+  - file:///mayhem/mayhem/testsuite/snmp_mib
+cmds:
+  - cmd: /mayhem/snmp_mib_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/snmp_mib.dict

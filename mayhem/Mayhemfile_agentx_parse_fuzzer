@@ -1,0 +1,8 @@
+project: net-snmp
+target: agentx_parse_fuzzer
+testsuite:
+  - file:///mayhem/mayhem/testsuite/agentx_parse
+cmds:
+  - cmd: /mayhem/agentx_parse_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/agentx.dict
